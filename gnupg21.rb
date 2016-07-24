@@ -33,6 +33,7 @@ class Gnupg21 < Formula
   depends_on "gettext"
   depends_on "adns"
   depends_on "libusb-compat" => :recommended
+  depends_on "libusb" => :linked
   depends_on "readline" => :optional
   depends_on "homebrew/fuse/encfs" => :optional
 
