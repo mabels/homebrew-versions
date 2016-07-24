@@ -1,9 +1,9 @@
 class Gnupg21 < Formula
   desc "GNU Privacy Guard: a free PGP replacement"
   homepage "https://www.gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.1.13.tar.bz2"
-  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-2.1.13.tar.bz2"
-  sha256 "4f9d83a6221daa60130fa79f0b1d37d6c20fffdd0320b640c7a597c5b6219675"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.1.14.tar.bz2"
+  mirror "https://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/gnupg/gnupg-2.1.14.tar.bz2"
+  sha256 "9450dee9693b6a12bf0c374dae77b66c30f69ff8f35fc9266ab8dd76998eba42"
 
   bottle do
     sha256 "4badc6179f850d075d1068e1b5dd2cb9e8c57a58f1a21ffc561aa755bfddf945" => :el_capitan
@@ -47,11 +47,11 @@ class Gnupg21 < Formula
   conflicts_with "gpgme",
         :because => "gpgme currently requires 1.x.x or 2.0.x."
 
-  # Patch for `make check` failures in 2.1.13.
+  # Patch for `make` failures in 2.1.14.
   # Fixed upstream by Justus Winter & can be removed in next release.
   patch do
-    url "https://raw.githubusercontent.com/Homebrew/formula-patches/7b2211b/gnupg21/spawned_child_8f79c31b.diff"
-    sha256 "fde57b1e484aa738af8f582910330cadef144430d9221d3242b5f635c7f41dbe"
+    url "https://raw.githubusercontent.com/mabels/formula-patches/patch-1/gnupg21/missing_libintl_in_2_1_14"
+    sha256 "ea51c6ae3799a623a092d60cd8b45ba6912fdbb12af27994e43edea6845e0b61"
   end
 
   def install
